@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Veuillez renseigner un Hackathon</h2>
+<form class="example-form" [formGroup]="hackathonForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Titre de l'hackathon</mat-label>
+      <input matInput placeholder="Ex. titre" value="Titre" formControlName="titre">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Metter la description de votre hackathon..." formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Partenaire de votre hackathon</mat-label>
+        <input matInput placeholder="Ex. partenaire" value="Partenaire" formControlName="partenaire">
+      </mat-form-field>
+      
+      <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial type="submit" (click)="ajouterHackathon()">envoyer</button>
+      </mat-dialog-actions>
+  </form>
+

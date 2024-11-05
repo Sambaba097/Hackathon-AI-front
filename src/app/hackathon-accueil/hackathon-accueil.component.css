@@ -18,3 +18,15 @@ h1.zoom {
   .example-spacer {
     flex: 1;
   }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de la page */
+  }
+  
+  /* Agrandir le bouton */
+  .large-button {
+    font-size: 1.5rem; /* Taille du texte */
+    padding: 1rem 2rem; /* Agrandir la zone cliquable */
+  }
