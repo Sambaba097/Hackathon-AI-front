@@ -1,0 +1,32 @@
+h1.zoom {
+    font-family: 'Rubik Wet Paint', cursive;
+    font-size: 10vw;
+    margin-left: 20%;
+    top: 50%;
+    transform: translate(0%, 600%)rotate(-2deg);
+    -webkit-text-stroke-width: 0.09vh;
+    -webkit-text-fill-color: transparent;
+    outline: none;
+  }
+  h2.custom{
+    font-family: 'Rubik Wet Paint', cursive;
+    position: absolute;
+   margin-left: 48%;
+   top: 12%;
+   transform: translate(0%, 600%)rotate(-2deg);
+  }
+  .example-spacer {
+    flex: 1;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de la page */
+  }
+  
+  /* Agrandir le bouton */
+  .large-button {
+    font-size: 1.5rem; /* Taille du texte */
+    padding: 1rem 2rem; /* Agrandir la zone cliquable */
+  }
