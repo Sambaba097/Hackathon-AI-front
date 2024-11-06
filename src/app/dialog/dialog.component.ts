@@ -9,6 +9,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormService } from '../services/form.service';
@@ -27,7 +29,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DialogComponent{
   hackathonForm !: FormGroup;
-  constructor (private fb: FormBuilder, private fs: FormService){
+  constructor (private fb: FormBuilder, private fs: FormService, private snackbar: MatSnackBar){
   
   }
   ngOnInit() {
@@ -42,10 +44,16 @@ export class DialogComponent{
     if(this.hackathonForm.valid){
       this.fs.ajouterhackathon(this.hackathonForm.value).subscribe({
         next: () => {
-          alert("produit ajouter avec succés");
+          // alert("produit ajouter avec succés");
+          this.snackbar.open('Hackathon ajouté avec succès !', 'Fermer', {
+            duration: 10*3000, // Durée d'affichage en millisecondes
+          });
         },
         error: (error) => {
           console.error(error);
+          this.snackbar.open('Erreur lors de l\'ajout du hackathon', 'Fermer', {
+            duration: 10*3000,
+          });
         }
       })
 
