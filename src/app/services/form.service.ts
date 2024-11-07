@@ -14,4 +14,10 @@ export class FormService {
   ajouterhackathon(data: any) {
     return this.http.post<any>(this.apiUrl, data);
   }
+  // Méthode pour récupérer tous les hackathons
+  recupererhackathon() {
+    return this.http.get<any>(`${this.apiUrl}/recup`);
+  }
+
+
 }
